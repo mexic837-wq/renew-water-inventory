@@ -148,10 +148,17 @@ function renderizarTabla(sede) {
     const existencia = Number(item.existencia) || 0;
     let stockHTML = '';
 
-    if (existencia < 5) {
+    if (existencia === 0) {
       stockHTML = `
-        <span class="font-semibold text-red-400">${existencia}</span>
-        <span class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-red-500/20 text-red-400 border border-red-500/30">
+        <span class="font-semibold text-gray-400">${existencia}</span>
+        <span class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-gray-500/20 text-gray-400 border border-gray-500/30">
+          Sin Stock
+        </span>
+      `;
+    } else if (existencia === 1) {
+      stockHTML = `
+        <span class="font-semibold text-gray-400">${existencia}</span>
+        <span class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-gray-500/20 text-gray-400 border border-gray-500/30">
           Stock Bajo
         </span>
       `;
