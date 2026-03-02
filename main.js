@@ -162,16 +162,6 @@ function renderizarTabla(sede) {
           Stock Bajo
         </span>
       `;
-    } else if (existencia <= 10) {
-      stockHTML = `
-        <span class="font-semibold text-red-400">${existencia}</span>
-        <span class="text-gray-600 text-xs ml-1">uds</span>
-      `;
-    } else if (existencia <= 20) {
-      stockHTML = `
-        <span class="font-semibold text-yellow-400">${existencia}</span>
-        <span class="text-gray-600 text-xs ml-1">uds</span>
-      `;
     } else {
       stockHTML = `
         <span class="font-semibold text-green-400">${existencia}</span>
